@@ -1,1 +1,1 @@
-Code, Database and Results for my Diploma Thesis in ECE NTUA
+Code, Dataset and Results for my Diploma Thesis in ECE NTUA
