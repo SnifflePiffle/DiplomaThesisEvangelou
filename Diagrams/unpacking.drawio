@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net" modified="2025-01-06T18:52:07.123Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0" etag="YdAVml1a5zqgrURsx3-X" version="24.2.7" type="device">
+  <diagram name="Σελίδα-1" id="15gIarMhrHjQ7ha2D4QE">
+    <mxGraphModel dx="1050" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;labelBackgroundColor=none;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="160" y="120" width="100" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-3" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="134" y="160" as="sourcePoint" />
+            <mxPoint x="294" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="134" y="246" as="sourcePoint" />
+            <mxPoint x="294" y="246" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kWxWusmwlDWr6jLgvIZN-5" target="kWxWusmwlDWr6jLgvIZN-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="139" />
+              <mxPoint x="310" y="359" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kWxWusmwlDWr6jLgvIZN-5" target="kWxWusmwlDWr6jLgvIZN-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="147" />
+              <mxPoint x="300" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-5" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Επικεφαλίδα PE&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="124" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-6" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Τμήμα Κώδικα&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="155" y="170" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-7" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Πίνακας Imports&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="344" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-8" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="134" y="319" as="sourcePoint" />
+            <mxPoint x="294" y="319" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-9" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Λοιπά τμήματα (π.χ. δεδομένων)&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="162" y="266" width="95" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-11" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="424" y="120" width="100" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-12" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="398" y="160" as="sourcePoint" />
+            <mxPoint x="558" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kWxWusmwlDWr6jLgvIZN-14" target="kWxWusmwlDWr6jLgvIZN-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="600" y="139" />
+              <mxPoint x="600" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="kWxWusmwlDWr6jLgvIZN-14" target="kWxWusmwlDWr6jLgvIZN-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="147" />
+              <mxPoint x="580" y="359" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-14" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Νέα επικεφαλίδα PE&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="422" y="124" width="101" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-15" value="&lt;font face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Packed κώδικας και δεδομένα&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="423.5" y="139.36" width="100.5" height="97" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-16" value="&lt;div&gt;&lt;font size=&quot;1&quot; face=&quot;Times New Roman&quot;&gt;&lt;b&gt;Unpacking stub&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="321" width="110" height="17" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-17" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="398" y="319" as="sourcePoint" />
+            <mxPoint x="558" y="319" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-21" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="399" y="384" as="sourcePoint" />
+            <mxPoint x="559" y="384" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-22" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 10px;&quot;&gt;&lt;b&gt;Πίνακας Imports του packed εκτελέσιμου&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="423" y="372" width="100" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-23" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;b&gt;&lt;font&gt;Αρχικό Entry point&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;" vertex="1" parent="1">
+          <mxGeometry x="171" y="212" width="75" height="16.36" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-24" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;b&gt;&lt;font&gt;Αρχικό Entry point&lt;/font&gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;" vertex="1" parent="1">
+          <mxGeometry x="436.5" y="213" width="75" height="16.36" as="geometry" />
+        </mxCell>
+        <mxCell id="kWxWusmwlDWr6jLgvIZN-26" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;Entry Point του Packed executable&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 4;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="434.5" y="344" width="80" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

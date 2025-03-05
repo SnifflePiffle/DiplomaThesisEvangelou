@@ -1,0 +1,36 @@
+2025-01-21T23:09:29 | DEBUG: Logger initialized
+2025-01-21T23:09:29 | DEBUG: args: -s C:\Users\mixlh\Diploma_Toolset\echo_out_nopacker_notpacked\echo_out-nopacker_0.exe -c C:\Users\mixlh\Diploma_Toolset\Injector-master\Injector\bin\Release\netcoreapp3.1\config.ini dll_path
+2025-01-21T23:09:29 | INFO: Reading from config file: C:\Users\mixlh\Diploma_Toolset\Injector-master\Injector\bin\Release\netcoreapp3.1\config.ini
+2025-01-21T23:09:29 | DEBUG: Overriding command line args with config values
+2025-01-21T23:09:29 | DEBUG: Injector Options:
+  pid=
+  process=
+  start=C:\Users\mixlh\Diploma_Toolset\echo_out_nopacker_notpacked\echo_out-nopacker_0.exe
+  process-restarts=False
+  win=False
+  delay=5000
+  wait-for-dlls=
+  multi-dll-delay=1000
+  timeout=30000
+  quiet=False
+  verbose=False
+  interactive=False
+  no-pause-on-error=False
+  dlls=dll_path
+
+2025-01-21T23:09:29 | DEBUG: Checking if process has already started
+2025-01-21T23:09:29 | DEBUG: Finding processes matching 'echo_out-nopacker_0'
+2025-01-21T23:09:29 | DEBUG: No process found matching the supplied name
+2025-01-21T23:09:29 | INFO: Starting C:\Users\mixlh\Diploma_Toolset\echo_out_nopacker_notpacked\echo_out-nopacker_0.exe
+2025-01-21T23:09:29 | INFO: Injecting 1 DLL(s) into echo_out-nopacker_0 (6308)
+2025-01-21T23:09:29 | DEBUG: Opening handle to process
+2025-01-21T23:09:29 | DEBUG: Retrieving the memory address to LoadLibraryA
+2025-01-21T23:09:29 | INFO: Attempting to inject DLL, 1 of 1, detours_hook64.dll...
+2025-01-21T23:09:29 | DEBUG: Allocating memory in the process to write the DLL path
+2025-01-21T23:09:29 | DEBUG: Writing the DLL path in the process memory
+2025-01-21T23:09:29 | DEBUG: Creating remote thread. This is where the magic happens!
+2025-01-21T23:09:29 | DEBUG: Waiting for DLL to load...
+2025-01-21T23:09:29 | DEBUG: Closing remote thread
+2025-01-21T23:09:29 | DEBUG: Freeing memory
+2025-01-21T23:09:29 | INFO: Injected!
+2025-01-21T23:09:29 | DEBUG: Closing handle to process

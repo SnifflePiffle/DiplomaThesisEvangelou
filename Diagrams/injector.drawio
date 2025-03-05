@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:134.0) Gecko/20100101 Firefox/134.0" version="26.0.6">
+  <diagram name="Σελίδα-1" id="fMwURN8pj3Gbf9gbPCXN">
+    <mxGraphModel dx="1313" dy="698" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-1" value="program.exe" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="280" y="80" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tmOuA8An_8UpXDJVzkR6-3" target="tmOuA8An_8UpXDJVzkR6-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="205" />
+              <mxPoint x="470" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tmOuA8An_8UpXDJVzkR6-3" target="tmOuA8An_8UpXDJVzkR6-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tmOuA8An_8UpXDJVzkR6-3" target="tmOuA8An_8UpXDJVzkR6-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-3" value="Injector.exe" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="560" y="180" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-8" value="&lt;div&gt;program.exe&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="278" y="200" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-4" value="Hooks.dll" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="303" y="230" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-11" value="SUSPENDED" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="280" y="60" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-12" value="SUSPENDED" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="278" y="180" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-13" value="RUNNING" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="288" y="310" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="tmOuA8An_8UpXDJVzkR6-14" target="tmOuA8An_8UpXDJVzkR6-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-14" value="&lt;div&gt;program.exe&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="278" y="331" width="100" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="tmOuA8An_8UpXDJVzkR6-14" target="tmOuA8An_8UpXDJVzkR6-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="353" y="421" />
+              <mxPoint x="210" y="421" />
+              <mxPoint x="210" y="376" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-15" value="Hooks.dll" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="303" y="361" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-22" value="&lt;div&gt;results.json&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="268" y="510" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-27" value="&lt;div&gt;1. Create Suspended&amp;nbsp;&lt;/div&gt;&lt;div&gt;Program Process&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="378" y="60" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-28" value="&lt;div&gt;2. Inject hooking&lt;/div&gt;&lt;div&gt;&amp;nbsp;DLL&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="368" y="200" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-29" value="&lt;div&gt;3. Resume&lt;/div&gt;&lt;div&gt;Program&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="383" y="326" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-30" value="4. Divert execution &lt;br&gt;to hooked functions" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="90" y="380" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tmOuA8An_8UpXDJVzkR6-31" value="&lt;div&gt;5. Store results&lt;/div&gt;&lt;div&gt;&amp;nbsp;at program exit&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="330" y="450" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

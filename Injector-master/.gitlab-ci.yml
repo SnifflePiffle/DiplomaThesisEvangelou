@@ -1,0 +1,221 @@
+stages:
+  - build
+  - deploy
+
+variables: &global_variables
+  VERSION: 1.4.0
+  GITHUB_API_URL: https://api.github.com
+  GITLAB_API_URL: https://gitlab.com/api/v4
+  INJECTOR_PROJECT_ID: 16080289
+  INJECTOR_CONFIG_PROJECT_ID: 16080290
+
+.build:
+  stage: build
+  image: mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
+  before_script: &build_before_script
+    - apk update
+    - apk add zip
+  script:
+    - "dotnet publish -r win-x64 -c Release -o publish /p:PublishSingleFile=true /p:PublishWithAspNetCoreTargetManifest=false"
+    - BUILD_METADATA_PART=$([ -n "$BUILD_METADATA" ] && echo "+$BUILD_METADATA" || echo "")
+    - ARCHIVE_NAME=injector-$ARCHIVE_VERSION-win64$BUILD_METADATA_PART.zip
+    - "zip -j $ARCHIVE_NAME LICENSE README.md CHANGELOG.md sample-config.ini publish/Injector.exe"
+    - "echo download: $GITLAB_API_URL/projects/$INJECTOR_PROJECT_ID/jobs/artifacts/$CI_COMMIT_REF_NAME/raw/$ARCHIVE_NAME?job=$CI_JOB_NAME"
+  variables: &build_variables
+    <<: *global_variables
+  artifacts:
+    paths:
+      - injector-*.zip
+
+master:
+  extends: .build
+  only:
+    - master
+  before_script:
+    - *build_before_script
+    - ARCHIVE_VERSION="$VERSION"
+    - BUILD_METADATA="$CI_JOB_ID"
+  variables:
+    <<: *build_variables
+  artifacts:
+    expire_in: 6 months
+
+dev:
+  extends: .build
+  only:
+    - branches
+  except:
+    refs:
+      - master
+    variables:
+      - $CI_COMMIT_TAG =~ /v\d+\.\d+\.\d+/
+  before_script:
+    - *build_before_script
+    - ARCHIVE_VERSION="$CI_COMMIT_REF_SLUG"
+    - BUILD_METADATA="$CI_JOB_ID"
+  variables:
+    <<: *build_variables
+  artifacts:
+    expire_in: 1 day
+
+release:
+  extends: .build
+  only:
+    variables:
+      - $CI_COMMIT_TAG =~ /v\d+\.\d+\.\d+/
+  before_script:
+    - *build_before_script
+    - ARCHIVE_VERSION="${CI_COMMIT_TAG:1}"
+    - BUILD_METADATA=
+  variables:
+    <<: *build_variables
+  artifacts:
+    expire_in: 1 month
+
+.gen_changelog_fragment: &gen_changelog_fragment
+  - |
+    # Parse changelog
+    #
+    fragment_start="## $CI_COMMIT_TAG"
+    fragment_end="## v"
+    sed -n "/^$fragment_start/,/^$fragment_end/ {/^$fragment_start/ {p;n}; /^$fragment_end/ q; p}" CHANGELOG.md >changelog_fragment
+    cat changelog_fragment
+
+.check_release: &check_release
+  - |
+    # Check if release already exists
+    #
+    url=$GITHUB_API_URL/repos/turkoid/$CI_PROJECT_NAME/releases/tags/$CI_COMMIT_TAG
+    headers='-H "Accept: application/vnd.github.v3+json"'
+    opts='-s -w "%{http_code}" -o response'
+    echo curl $opts $headers $url
+    rc=$(eval curl $opts $headers $url)
+    echo http_code=$rc
+    if [ $rc -eq 200 ]; then
+      release_id=$(cat response | jq -r '.id // empty')
+      upload_url=$(cat response | jq -r '.upload_url // empty')
+      upload_url=${upload_url%\{*}
+      download_url=$(cat response | jq -r '.assets[0].browser_download_url // empty')
+      echo Release already exists
+    elif [ $rc -eq 404 ]; then
+      release_id=
+      upload_url=
+      download_url=
+    else
+      cat response | jq .
+      return 1
+    fi
+
+.create_github_release: &update_github_release
+  - |
+    # Create release
+    #
+    if [ -z "$upload_url" ]; then
+      url=$GITHUB_API_URL/repos/turkoid/$CI_PROJECT_NAME/releases
+      headers='-H "Accept: application/vnd.github.v3+json"'
+      headers=$headers' -H "Authorization: token $GITHUB_API_TOKEN"'
+      data=$(jq -n -c --arg tag_name "$CI_COMMIT_TAG" --arg body "$(cat changelog_fragment)" '{"tag_name": $tag_name, "body": $body}')
+      opts='-s -w "%{http_code}" -o response'
+      echo curl $opts $headers --data "'$data'" $url
+      rc=$(eval curl $opts $headers --data "'$data'" $url)
+      echo http_code=$rc
+      if [ $rc -ne 201 ]; then
+        cat response | jq .
+        return 1
+      fi
+      release_id=$(cat response | jq -r '.id // empty')
+      upload_url=$(cat response | jq -r '.upload_url // empty')
+      upload_url=${upload_url%\{*}
+    fi
+    echo release_id=$release_id
+    echo upload_url=$upload_url
+  - |
+    # Sanity check
+    #
+    if [ -z "$release_id" ] || [ -z "$upload_url" ]; then
+      echo "Something went wrong"
+      return 1
+    fi
+
+.upload_release_artifacts: &upload_release_artifacts
+  - |
+    # Upload release artifacts
+    #
+    if [ -z "$download_url" ]; then
+      url=$upload_url?name=$ARCHIVE_NAME
+      headers='-H "Accept: application/vnd.github.v3+json"'
+      headers=$headers' -H "Authorization: token $GITHUB_API_TOKEN"'
+      headers=$headers' -H "Content-Type: application/zip"'
+      opts='-s -w "%{http_code}" -o response'
+      echo curl $opts $headers --data-binary "@$ARCHIVE_NAME" $url
+      rc=$(eval curl $opts $headers --data-binary "@$ARCHIVE_NAME" $url)
+      echo http_code=$rc
+      if [ $rc -ne 201 ]; then
+        cat response | jq .
+        return 1
+      fi
+      download_url=$(cat response | jq -r '.browser_download_url // empty')
+    fi
+    echo download_url=$download_url
+  - |
+    # Sanity check
+    #
+    if [ -z "$download_url" ]; then
+      echo "Something went wrong"
+      return 1
+    fi
+
+.deploy:
+  stage: deploy
+  image: alpine:latest
+  only:
+    variables:
+      - $CI_COMMIT_TAG =~ /v\d+\.\d+\.\d+/
+  before_script:
+    - |
+      # Verify artifacts
+      #
+      VERSION=${CI_COMMIT_TAG:1}
+      ARCHIVE_NAME=$(ls -1 | grep -m1 injector-$VERSION.*.zip || true)
+      if [ ! -f "$ARCHIVE_NAME" ]; then
+        ls -1
+        echo 'ERROR: injector-$VERSION.*.zip missing'
+        return 1
+      fi
+    - apk update
+    - apk add jq curl
+  variables: &deploy_variables
+    <<: *global_variables
+
+github_release:
+  extends: .deploy
+  script:
+    - *gen_changelog_fragment
+    - *check_release
+    - *update_github_release
+    - *upload_release_artifacts
+  variables:
+    <<: *deploy_variables
+
+injector_file_bundles:
+  extends: .deploy
+  stage: deploy
+  script:
+    - |
+      # Trigger downstream pipeline
+      #
+      url=$GITLAB_API_URL/projects/$INJECTOR_CONFIG_PROJECT_ID/trigger/pipeline
+      form_data='-F "token=$CI_JOB_TOKEN"'
+      form_data=$form_data' -F "ref=master"'
+      form_data=$form_data' -F "variables[INJECTOR_RELEASE_TAG]=$CI_COMMIT_TAG"'
+      opts='-s -w "%{http_code}" -o response -X POST'
+      echo curl $opts $form_data $url
+      rc=$(eval curl $opts $form_data $url)
+      echo http_code=$rc
+      if [ $rc -ne 201 ]; then
+        cat response | jq .
+        return 1
+      fi
+  variables:
+    <<: *deploy_variables
+    GIT_STRATEGY: none

@@ -1,0 +1,15 @@
+pyyaml
+pefile
+capstone
+pythonnet==3.0.0a2
+pe_tools
+capstone
+keystone-engine
+pycryptodome
+argparse
+PrettyTable
+PySimpleGUI
+clipboard
+colorama
+yara-python
+donut-shellcode
